@@ -1,5 +1,5 @@
 // server.js
-
+'use strict'
 const express = require('express');
 const SocketServer = require('ws').Server;
 const uuid = require('node-uuid');
@@ -30,10 +30,7 @@ wss.on('connection', (ws) => {
   ws.on('close', () => {
     changeUserCount();
     console.log('Client disconnected')
-
-
   });
-
 });
 
 wss.broadcast = function(data) {
